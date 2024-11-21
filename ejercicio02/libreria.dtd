@@ -1,0 +1,10 @@
+<!ELEMENT libreria (libro+)>
+<!-- Se utiliza + para indicar que puede haber uno o más elementos dentro de la etiquta -->
+
+<!ELEMENT libro (titulo, autor, año, precio)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT año (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ATTLIST precio moneda CDATA #IMPLIED>
+<!-- Con esta configuración en el DTD, el archivo libreria.xml puede tener elementos precio con o sin el atributo moneda -->

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Este documento XML describe la configuración de tres máquinas virtuales en VirtualBox -->
+<maquinasVirtuales>
+    <!-- Primera máquina virtual -->
+    <maquina id="1">
+        <nombre>Kali-Linux</nombre>
+        <cpu>4</cpu>
+        <ram unidad="MB">7500</ram>
+        <disco ruta="C:\Users\1ASIR\VirtualBox VMs\MMVV-IDP\Kali Linux Raul\Kali Linux Raul.vdi" tipo="vdi">
+            <tamaño unidad="GB">25</tamaño>
+        </disco>
+        <adaptadorRed modo="NAT">
+        </adaptadorRed>
+    </maquina>
+
+    <!-- Segunda máquina virtual -->
+    <maquina id="2">
+        <nombre>Linux-Mint</nombre>
+        <cpu>2</cpu>
+        <ram unidad="MB">4096</ram>
+        <disco ruta="C:\Users\1ASIR\VirtualBox VMs\MMVV-IDP\linuxmint21.3\linuxmint21-disk001.vdi" tipo="vdi">
+            <tamaño unidad="GB">20</tamaño>
+        </disco>
+        <adaptadorRed modo="NAT"/>
+    </maquina>
+
+    <!-- Tercera máquina virtual -->
+    <maquina id="3">
+        <nombre>Ubuntu-server</nombre>
+        <cpu>3</cpu>
+        <ram unidad="MB">8192</ram>
+        <disco ruta="C:\Users\1ASIR\Desktop\ubuntu-server2204.ova" tipo="vdi">
+            <tamaño unidad="GB">5</tamaño>
+        </disco>
+        <adaptadorRed modo="NAT">
+        </adaptadorRed>
+    </maquina>
+</maquinasVirtuales>

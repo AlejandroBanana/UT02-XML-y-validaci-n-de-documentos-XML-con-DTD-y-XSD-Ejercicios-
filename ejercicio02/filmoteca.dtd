@@ -1,0 +1,14 @@
+<!ELEMENT filmoteca (pelicula+)>
+<!-- Se utiliza + para indicar que puede haber uno o más elementos dentro de la etiquta -->
+
+<!ELEMENT pelicula (titulo, director, año, duracion, genero)>
+<!ATTLIST pelicula calificacion CDATA #REQUIRED>
+<!-- El valor #REQUIRED significa que el atributo calificacion es obligatorio para cada elemento pelicula-->
+
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT director (#PCDATA)>
+<!ELEMENT año (#PCDATA)>
+<!ELEMENT duracion (#PCDATA)>
+<!ELEMENT genero (#PCDATA)>
+<!ATTLIST duracion unidad CDATA #IMPLIED>
+<!-- El valor #IMPLIED significa que el atributo unidad es opcional-->

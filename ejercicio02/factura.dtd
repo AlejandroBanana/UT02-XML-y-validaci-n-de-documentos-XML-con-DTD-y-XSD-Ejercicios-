@@ -1,0 +1,40 @@
+<!ELEMENT factura (cabecera, emisor, receptor, detalle, resumen, comentarios?)>
+<!-- Se usa ? en comentarios? porque es opcional en algunas facturas-->
+
+<!ELEMENT cabecera (fechaFactura, numeroFactura, fechaVencimiento)>
+<!ELEMENT fechaFactura (#PCDATA)>
+<!ELEMENT numeroFactura (#PCDATA)>
+<!ELEMENT fechaVencimiento (#PCDATA)>
+
+<!ELEMENT emisor (nombre, direccion, nif, ciudad, email)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+<!ELEMENT nif (#PCDATA)>
+<!ELEMENT ciudad (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+
+<!ELEMENT receptor (nombre, direccion, cif, ciudad, email)>
+<!ELEMENT cif (#PCDATA)>
+
+<!ELEMENT detalle (item+)>
+<!-- Se utiliza + para indicar que puede haber uno o más elementos dentro de la etiqueta -->
+
+<!ELEMENT item (descripcion, unidades, precioUnitario, precioTotal)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT unidades (#PCDATA)>
+<!ELEMENT precioUnitario (#PCDATA)>
+<!ELEMENT precioTotal (#PCDATA)>
+
+<!ELEMENT resumen (baseImponible, iva, irpf, total)>
+<!ELEMENT baseImponible (#PCDATA)>
+<!ELEMENT iva (#PCDATA)>
+<!ATTLIST iva porcentaje CDATA #REQUIRED>
+<!-- El atributo "porcentaje" en "iva" es #REQUIRED en el DTD porque es necesario especificar el porcentaje de IVA aplicado -->
+
+<!ELEMENT irpf (#PCDATA)>
+<!ATTLIST irpf porcentaje CDATA #REQUIRED>
+<!-- El atributo "porcentaje" en "irpf" es #REQUIRED en el DTD porque es necesario especificar el porcentaje de IVA aplicado -->
+
+<!ELEMENT total (#PCDATA)>
+
+<!ELEMENT comentarios (#PCDATA)>

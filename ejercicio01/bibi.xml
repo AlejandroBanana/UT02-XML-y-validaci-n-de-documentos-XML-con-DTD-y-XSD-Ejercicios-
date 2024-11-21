@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca
+ [
+    <!ELEMENT biblioteca (libro+)>
+    <!ELEMENT libro (titulo, autor?, precio)>
+    <!ELEMENT titulo (#PCDATA)>
+    <!ELEMENT autor (#PCDATA)>
+    <!ELEMENT precio (#PCDATA)>
+    <!ATTLIST precio moneda CDATA #IMPLIED>
+]>
+<biblioteca>
+    <libro>
+        <titulo>XML Básico</titulo>
+        <autor>Juan Pérez</autor>
+        <precio moneda="USD">25.00</precio>
+    </libro>
+    <libro>
+        <titulo>Guía Avanzada de XML</titulo>
+        <precio moneda="EUR">30.00</precio>
+    </libro>
+</biblioteca>

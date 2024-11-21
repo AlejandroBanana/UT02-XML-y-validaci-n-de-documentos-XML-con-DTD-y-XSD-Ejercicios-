@@ -1,0 +1,12 @@
+<!ELEMENT maquinaVirtuales (maquina+)>
+<!-- Se utiliza + para indicar que puede haber uno o más elementos dentro de la etiquta -->
+
+<!ELEMENT maquina (nombre, cpu, ram, disco, tamaño, adaptadorRed)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT cpu (#PCDATA)>
+<!ELEMENT ram (#PCDATA)>
+<!ELEMENT disco (#PCDATA)>
+<!ELEMENT tamaño (#PCDATA)>
+<!ELEMENT adaptadorRed (#PCDATA)>
+<!ATTLIST maquina id CDATA #REQUIRED> 
+<!-- El valor #REQUIRED significa que el atributo id es obligatorio para cada elemento maquina-->

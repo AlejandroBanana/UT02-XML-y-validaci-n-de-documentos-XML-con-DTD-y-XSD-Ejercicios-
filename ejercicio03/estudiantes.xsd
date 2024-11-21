@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="estudiantes">
+        <xs:complexType>
+            <xs:sequence maxOccurs="10">
+                <xs:element name="estudiante">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nombre" type="xs:string"/>
+                            <xs:element name="apellidos" type="xs:string"/>
+                            <xs:element name="matricula">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:integer">
+                                        <xs:totalDigits value="7"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="fechaInscripcion" type="xs:date"/>
+                            <xs:element name="correo">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="telefonos">
+                                <xs:complexType>
+                                    <xs:sequence maxOccurs="3">
+                                        <xs:element name="telefono">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:length value="10"/>
+                                                    <xs:pattern value="\d{10}"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="direccion">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="via">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="calle"/>
+                                                    <xs:enumeration value="avenida"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="nombreVia" type="xs:string"/>
+                                        <xs:element name="codigoPostal">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:length value="5"/>
+                                                    <xs:pattern value="\d{5}"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

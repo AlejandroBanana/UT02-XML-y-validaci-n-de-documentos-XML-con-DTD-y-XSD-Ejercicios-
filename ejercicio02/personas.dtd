@@ -1,0 +1,14 @@
+<!ELEMENT personas (persona+)>
+<!-- Se utiliza + para indicar que puede haber uno o más elementos dentro de la etiquta -->
+
+<!ELEMENT persona (nombre, apellidos, telefono, email, direccion)>
+<!ELEMENT direccion (via, nombrevia, numero)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT via (#PCDATA)>
+<!ELEMENT nombrevia (#PCDATA)>
+<!ELEMENT numero (#PCDATA)>
+<!ATTLIST persona id CDATA #REQUIRED> 
+<!-- El valor #REQUIRED significa que el atributo id es obligatorio para cada elemento persona-->
